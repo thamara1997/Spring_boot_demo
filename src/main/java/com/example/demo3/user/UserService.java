@@ -11,6 +11,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepo;
 
+    //save while checking first name
     public String addUser(User userData){
         if(userRepo.returnUser(userData.getFname()) == null){
             userRepo.save(userData);
@@ -21,6 +22,7 @@ public class UserService {
         }
     }
 
+    //get all users
     public List<User> getAllUsers() {
         return userRepo.findAll();
     }
